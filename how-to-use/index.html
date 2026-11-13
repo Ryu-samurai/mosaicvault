@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>使い方 / How to Use - Mosaic Vault</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 24px 16px 60px;
+    background-color: #fff;
+  }
+  h1 {
+    font-size: 1.5em;
+    border-bottom: 2px solid #5B30F6;
+    padding-bottom: 8px;
+    margin-top: 0;
+  }
+  h2 {
+    font-size: 1.2em;
+    color: #2c3e50;
+    margin-top: 2em;
+    border-left: 5px solid #5B30F6;
+    padding-left: 10px;
+  }
+  h3 {
+    font-size: 1.05em;
+    color: #2c3e50;
+    margin-top: 1.5em;
+  }
+  p {
+    margin: 0.8em 0;
+  }
+  ol, ul {
+    padding-left: 1.4em;
+  }
+  li {
+    margin: 0.5em 0;
+  }
+  .note {
+    background-color: #f5f3fe;
+    border-left: 4px solid #5B30F6;
+    padding: 10px 14px;
+    margin: 1em 0;
+    font-size: 0.95em;
+  }
+  .warning {
+    background-color: #fff8ec;
+    border-left: 4px solid #e0a800;
+    padding: 10px 14px;
+    margin: 1em 0;
+    font-size: 0.95em;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    font-size: 0.95em;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background-color: #f5f3fe;
+  }
+  footer {
+    margin-top: 3em;
+    padding-top: 1em;
+    border-top: 1px solid #eee;
+    font-size: 0.85em;
+    color: #888;
+  }
+
+  /* Language toggle */
+  .lang-toggle {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .lang-btn {
+    background: #f5f3fe;
+    color: #555;
+    border: 1px solid #d9cdfb;
+    padding: 6px 18px;
+    border-radius: 18px;
+    font-size: 0.9em;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .lang-btn.active {
+    background: #5B30F6;
+    color: #fff;
+    border-color: #5B30F6;
+  }
+  .lang-block { display: none; }
+  .lang-block.active { display: block; }
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+  <button class="lang-btn active" id="btn-ja" onclick="setLang('ja')">日本語</button>
+  <button class="lang-btn" id="btn-en" onclick="setLang('en')">English</button>
+</div>
+
+<!-- ================= 日本語 ================= -->
+<div class="lang-block active" id="block-ja">
+
+<h1>使い方</h1>
+<p>「Mosaic Vault」は、画像の全体または一部にモザイクをかけ、その画像の中に、パスワードで暗号化した元の画像を隠しておくアプリです。モザイクをかけた画像は、そのまま普通の画像として見たり共有したりできます。保存したモザイク画像を、同じパスワードでアプリに読み込ませると、元の画像を復元できます。</p>
+<p>対応するOSは Android 10 以降です。</p>
+
+<div class="note">
+元の画像は、<strong>モザイク画像を作成した時に設定したパスワードを入力しないと復元できません。</strong>パスワードを忘れると、開発者にも復元できず、元の画像を取り戻せなくなりますので、大切に管理してください。短いパスワードや推測されやすいパスワードは、避けてください。
+</div>
+
+<h2>1. モザイク画像を作成する(モザイク画像生成)</h2>
+<ol>
+  <li>メイン画面で「<strong>モザイク画像生成</strong>」をタップします。</li>
+  <li>「<strong>画像を選択</strong>」をタップし、モザイクをかけたい画像を選びます。選んだ画像は、「元画像」タブに表示されます。</li>
+  <li>「モード」で、モザイクをかける範囲を選びます。
+    <ul>
+      <li><strong>画像全体</strong>:画像の全体にモザイクをかけます。</li>
+      <li><strong>指定領域</strong>:指定した四角い範囲にだけ、モザイクをかけます。「領域を編集」ボタンが表示されますので、次の「領域の指定のしかた」を参照してください。</li>
+    </ul>
+  </li>
+  <li>「モザイク強度」のスライダーで、モザイクの粗さを選びます(1〜10、初めは5です)。「強」に近いほど、モザイクが粗くなり、元の画像が分かりにくくなります。</li>
+  <li>「パスワード」欄に、パスワードを入力します。パスワード欄の右側の「保存」にチェックを入れておくと、パスワードを端末に保存し、次回から自動で入力された状態になります。</li>
+  <li>「<strong>モザイク画像生成</strong>」ボタンをタップします。処理が終わると、モザイク画像が作成され、「結果画像」タブに表示されます。</li>
+  <li>「元画像」と「結果画像」のタブを切り替えて、仕上がりを確認できます。</li>
+  <li>問題がなければ、「<strong>保存</strong>」ボタンで、作成した画像を端末に保存します。保存した画像は、端末のギャラリーアプリなどで、「Pictures/MosaicVault」フォルダに表示されます。</li>
+</ol>
+
+<div class="note">
+パスワードは4〜50文字で入力してください。
+</div>
+
+<h3>領域の指定のしかた(指定領域モード)</h3>
+<ol>
+  <li>「画像を選択」の後で、モードを「指定領域」に切り替え、「<strong>領域を編集</strong>」をタップします。</li>
+  <li>領域を選ぶ画面が開き、画像の中央に、四角い枠が表示されます。</li>
+  <li>枠の<strong>内側をドラッグ</strong>すると、枠が移動します。</li>
+  <li>枠の<strong>右下の角をドラッグ</strong>すると、枠の大きさを変えられます。</li>
+  <li>「<strong>決定</strong>」をタップすると、その範囲が指定されます。「キャンセル」をタップすると、指定せずに戻ります。</li>
+  <li>元の画面に戻ると、指定した範囲が、「元画像」タブの上に表示されます。</li>
+</ol>
+
+<div class="warning">
+「指定領域」では、<strong>枠の外側には、モザイクがかかりません。</strong>隠したい部分が、枠の中に収まっているかを確認してから、生成してください。「指定領域」を選んだのに、領域を指定していない場合は、エラーになります。
+</div>
+
+<div class="warning">
+モザイク強度が弱いと、モザイクをかけても、画像の内容が分かってしまう場合があります。顔や文字などを隠したい場合は、強度を高めに設定し、「結果画像」で見え方を確認してから保存してください。
+</div>
+
+<h2>2. 元の画像を復元する(画像復元)</h2>
+<ol>
+  <li>メイン画面で「<strong>画像復元</strong>」をタップします。</li>
+  <li>「<strong>画像を選択</strong>」をタップし、復元したいモザイク画像を選びます。選んだ画像は、「モザイク画像」タブに表示されます。</li>
+  <li>「パスワード」欄に、<strong>モザイク画像を作成した時と同じパスワード</strong>を入力します。</li>
+  <li>「<strong>復元</strong>」ボタンをタップします。パスワードが合っていれば、復元に成功し、「復元画像」タブに、元の画像が表示されます。</li>
+  <li>「モザイク画像」と「復元画像」のタブを切り替えて、見比べられます。</li>
+  <li>「<strong>保存</strong>」ボタンで、復元した画像を端末に保存します。保存先は、モザイク画像と同じ、「Pictures/MosaicVault」フォルダです。</li>
+</ol>
+
+<div class="warning">
+<p>ここで選択する画像は、<strong>このアプリで作成・保存したモザイク画像のファイルそのもの</strong>である必要があります。画像が加工されていたり、他のアプリで圧縮・変換されたりしていると、中に隠していた元の画像のデータが失われて、復元できません。</p>
+</div>
+
+<p>復元に失敗した場合は、「画像の復元に失敗しました」と表示されます。主な原因は、次の通りです。</p>
+<table>
+  <tr><th>原因</th><th>対処</th></tr>
+  <tr><td>パスワードが、作成した時と違う</td><td>正しいパスワードを入力してください。大文字・小文字も区別されます。</td></tr>
+  <tr><td>このアプリで作成したモザイク画像ではない</td><td>このアプリで保存した、モザイク画像のファイルを選んでください。</td></tr>
+  <tr><td>画像が、スクリーンショットや、トリミング、圧縮、変換などで加工されている</td><td>加工前の、保存したままのファイルを使ってください。加工された画像は、復元できません。</td></tr>
+</table>
+
+<p>その他、次のような場合も、エラーメッセージが表示されます。</p>
+<table>
+  <tr><th>状況</th><th>表示されるメッセージ</th></tr>
+  <tr><td>画像を選んでいない</td><td>画像を選択してください</td></tr>
+  <tr><td>パスワードが空</td><td>パスワードを入力してください</td></tr>
+  <tr><td>パスワードが短い、または長い</td><td>パスワードは4文字以上で入力してください / パスワードは50文字以内で入力してください</td></tr>
+  <tr><td>「指定領域」なのに、領域を指定していない</td><td>領域が指定されていません</td></tr>
+  <tr><td>モザイク画像を作れなかった</td><td>画像の生成に失敗しました</td></tr>
+  <tr><td>保存できる画像がない</td><td>画像がありません</td></tr>
+  <tr><td>保存できなかった</td><td>画像の保存に失敗しました</td></tr>
+</table>
+
+<div class="note">
+モザイク画像の作成や保存に失敗する場合は、画像の形式が対応していないことがあります。JPEGやPNGなど、一般的な形式の画像をお試しください。
+</div>
+
+<h2>3. 画像を人に送る・SNSに投稿するときの注意</h2>
+<div class="warning">
+<p>LINEやX(旧Twitter)、Instagramなどで画像を「写真」として送信・投稿すると、送っている間に、画像が自動的に圧縮・変換されることがあります。前述の通り、元の画像を復元するには<strong>作成時とまったく同じ画像ファイル</strong>が必要なため、一度でも圧縮・変換された画像は、<strong>元の画像を復元できなくなります</strong>。</p>
+<p>同じ理由で、画面をスクリーンショットして保存した画像からも、元の画像は復元できません。</p>
+</div>
+<ul>
+  <li>復元できる状態を保ちたい場合は、保存されたファイルを、そのまま(写真としてではなく)<strong>「ファイル」として</strong>送るようにしてください。例えばLINEなら、「アルバム」ではなく「ファイル」を選んで送信します。</li>
+  <li>メールの場合は、画像を本文に貼り付けるのではなく、<strong>添付ファイル</strong>として送ってください。</li>
+  <li>大切な画像は、送信・投稿する前に、必ず元の画像と、保存したモザイク画像のファイルを、端末やクラウドなどに保管しておくことをおすすめします。</li>
+</ul>
+
+<h2>4. 知っておいてほしいこと</h2>
+<ul>
+  <li><strong>パスワードは、忘れても再発行できません。</strong>開発者も、パスワードを知ることはできず、復元をお手伝いすることもできません。</li>
+  <li><strong>モザイク画像のファイルサイズは、元の画像より大きくなります。</strong>モザイクをかけた画像の中に、暗号化した元の画像のデータが入っているためです。</li>
+  <li><strong>モザイク画像を人に渡すと、暗号化された元の画像のデータも、一緒に渡ります。</strong>推測されにくいパスワードを設定し、パスワードは、画像とは別の方法で伝えてください。</li>
+  <li><strong>復元した画像は、元の画像ファイルそのものです。</strong>元の画像に撮影位置情報などが含まれていた場合は、復元した画像にも含まれます。公開する前に、ご注意ください。</li>
+  <li>画像やパスワードは、端末の中だけで処理され、外部には送信されません。詳しくは、プライバシーポリシーをご覧ください。</li>
+</ul>
+
+<h2>5. メニュー(☰)について</h2>
+<p>メイン画面右上の「☰」ボタンをタップすると、以下の項目が表示されます。</p>
+<ul>
+  <li><strong>使い方</strong>:使い方の説明が表示されます。</li>
+  <li><strong>プライバシーポリシー</strong>:個人情報の取り扱いについて確認できます。</li>
+  <li><strong>アプリ情報</strong>:バージョン情報や開発者情報、お問い合わせ先を確認できます。</li>
+</ul>
+
+<footer>
+  Mosaic Vault
+</footer>
+
+</div>
+
+<!-- ================= English ================= -->
+<div class="lang-block" id="block-en">
+
+<h1>How to Use</h1>
+<p>"Mosaic Vault" is an app that applies a mosaic to the whole of an image, or to part of it, and hides the original image, encrypted with a password, inside the result. You can view and share the mosaic image just like any ordinary image. When you load the saved mosaic image back into the app and enter the same password, the original image is restored.</p>
+<p>Android 10 or later is required.</p>
+
+<div class="note">
+The original image <strong>can only be restored by entering the password that was set when the mosaic image was created.</strong> If you forget the password, even the developer cannot restore the image, so please keep it safe. Avoid short or easily guessed passwords.
+</div>
+
+<h2>1. Create a Mosaic Image (Generate Mosaic Image)</h2>
+<ol>
+  <li>On the main screen, tap "<strong>Generate Mosaic Image</strong>".</li>
+  <li>Tap "<strong>Select Image</strong>" and choose the image you want to apply a mosaic to. The selected image is shown in the "Original Image" tab.</li>
+  <li>Under "Mode", choose which part to cover with the mosaic.
+    <ul>
+      <li><strong>Entire Image</strong>: applies the mosaic to the whole image.</li>
+      <li><strong>Selected Area</strong>: applies the mosaic only to a rectangle you choose. An "Edit Area" button appears; see "How to Select an Area" below.</li>
+    </ul>
+  </li>
+  <li>Use the "Mosaic Strength" slider to choose how coarse the mosaic is (1 to 10, starting at 5). The closer to "Strong", the coarser the mosaic and the harder it is to tell what the original image shows.</li>
+  <li>Enter a password in the "Password" field. If you check "Save" to the right of the password field, the password is saved on your device and filled in automatically next time.</li>
+  <li>Tap the "<strong>Generate Mosaic Image</strong>" button. When processing finishes, the mosaic image is created and shown in the "Result Image" tab.</li>
+  <li>You can switch between the "Original Image" and "Result Image" tabs to check the result.</li>
+  <li>If it looks right, tap "<strong>Save</strong>" to save the image to your device. Saved images appear in the "Pictures/MosaicVault" folder in your gallery app.</li>
+</ol>
+
+<div class="note">
+Passwords must be between 4 and 50 characters.
+</div>
+
+<h3>How to Select an Area (Selected Area mode)</h3>
+<ol>
+  <li>After selecting an image, switch the mode to "Selected Area" and tap "<strong>Edit Area</strong>".</li>
+  <li>The area selection screen opens, with a rectangular frame in the middle of the image.</li>
+  <li><strong>Drag inside the frame</strong> to move it.</li>
+  <li><strong>Drag the bottom-right corner</strong> to resize the frame.</li>
+  <li>Tap "<strong>Apply</strong>" to confirm the area. Tap "Cancel" to go back without selecting.</li>
+  <li>When you return to the previous screen, the selected area is shown on top of the "Original Image" tab.</li>
+</ol>
+
+<div class="warning">
+In "Selected Area" mode, <strong>the mosaic is not applied outside the frame.</strong> Make sure the part you want to hide is inside the frame before you generate the image. If you choose "Selected Area" but have not selected an area, you'll see an error.
+</div>
+
+<div class="warning">
+If the mosaic strength is low, the content of the image may still be recognizable. To hide faces or text, set a higher strength and check the "Result Image" before saving.
+</div>
+
+<h2>2. Restore the Original Image (Restore Original Image)</h2>
+<ol>
+  <li>On the main screen, tap "<strong>Restore Original Image</strong>".</li>
+  <li>Tap "<strong>Select Image</strong>" and choose the mosaic image you want to restore. The selected image is shown in the "Mosaic Image" tab.</li>
+  <li>Enter <strong>the same password you used when you created the mosaic image</strong> in the "Password" field.</li>
+  <li>Tap the "<strong>Restore</strong>" button. If the password is correct, the restore succeeds and the original image is shown in the "Restored Image" tab.</li>
+  <li>You can switch between the "Mosaic Image" and "Restored Image" tabs to compare them.</li>
+  <li>Tap "<strong>Save</strong>" to save the restored image to your device. It is saved to the same "Pictures/MosaicVault" folder as the mosaic images.</li>
+</ol>
+
+<div class="warning">
+<p>The image you select here must be <strong>the exact mosaic image file created and saved by this app</strong>. If the image has been edited, or compressed or converted by another app, the data of the hidden original image is lost and it cannot be restored.</p>
+</div>
+
+<p>If restoring fails, you'll see "Failed to restore the image." The main causes are as follows.</p>
+<table>
+  <tr><th>Cause</th><th>What to do</th></tr>
+  <tr><td>The password is different from the one used when the image was created</td><td>Enter the correct password. Passwords are case-sensitive.</td></tr>
+  <tr><td>The image is not a mosaic image created by this app</td><td>Select a mosaic image file saved by this app.</td></tr>
+  <tr><td>The image was changed by a screenshot, cropping, compression, or conversion</td><td>Use the file exactly as it was saved. Edited images cannot be restored.</td></tr>
+</table>
+
+<p>You may also see the following error messages in other situations.</p>
+<table>
+  <tr><th>Situation</th><th>Message shown</th></tr>
+  <tr><td>No image selected</td><td>No image selected. Please select an image.</td></tr>
+  <tr><td>The password is empty</td><td>Please enter a password</td></tr>
+  <tr><td>The password is too short or too long</td><td>Password must be at least 4 characters / Password must be 50 characters or less</td></tr>
+  <tr><td>"Selected Area" is on but no area is selected</td><td>No area has been selected.</td></tr>
+  <tr><td>The mosaic image could not be created</td><td>Failed to generate the image.</td></tr>
+  <tr><td>There is no image to save</td><td>No image to save</td></tr>
+  <tr><td>Saving failed</td><td>Failed to save image.</td></tr>
+</table>
+
+<div class="note">
+If creating or saving a mosaic image fails, the image format may not be supported. Please try a common format such as JPEG or PNG.
+</div>
+
+<h2>3. Sharing Images or Posting to Social Media</h2>
+<div class="warning">
+<p>If you send or post an image as a "photo" through apps like LINE, X (Twitter), or Instagram, the image may be automatically compressed or converted while it's being sent. As noted above, restoring the original image requires <strong>the exact same image file</strong> that was created — so once an image has been compressed or converted even once, <strong>the original image can no longer be restored</strong>.</p>
+<p>For the same reason, an image saved as a screenshot cannot be used to restore the original image either.</p>
+</div>
+<ul>
+  <li>To keep an image restorable, send the saved file itself <strong>as a file</strong>, not as a "photo". For example, in LINE, choose "File" instead of "Album/Photos" when sending.</li>
+  <li>When emailing an image, send it as an <strong>attachment</strong> rather than pasting it into the body of the message.</li>
+  <li>For important images, we recommend always keeping a copy of both the original image and the saved mosaic image file on your device or in the cloud before sending or posting them anywhere.</li>
+</ul>
+
+<h2>4. Good to Know</h2>
+<ul>
+  <li><strong>A forgotten password cannot be reissued.</strong> The developer cannot know your password and cannot help restore your image.</li>
+  <li><strong>A mosaic image file is larger than the original image.</strong> This is because the encrypted data of the original image is stored inside the mosaic image.</li>
+  <li><strong>If you give a mosaic image to someone else, the encrypted data of the original image goes with it.</strong> Choose a password that is hard to guess, and share it through a different channel than the image.</li>
+  <li><strong>A restored image is the original image file itself.</strong> If the original contained metadata such as location information, the restored image contains it as well. Please be careful before publishing it.</li>
+  <li>Your images and passwords are processed only on your device and are never sent externally. See the Privacy Policy for details.</li>
+</ul>
+
+<h2>5. About the Menu (☰)</h2>
+<p>Tapping the "☰" button in the top-right corner of the main screen shows the following items.</p>
+<ul>
+  <li><strong>How to Use</strong>: Shows the usage guide.</li>
+  <li><strong>Privacy Policy</strong>: View information on how personal data is handled.</li>
+  <li><strong>App Info</strong>: View version information, developer information, and contact details.</li>
+</ul>
+
+<footer>
+  Mosaic Vault
+</footer>
+
+</div>
+
+<script>
+  function setLang(lang) {
+    const isJa = lang === 'ja';
+
+    document.getElementById('block-ja').classList.toggle('active', isJa);
+    document.getElementById('block-en').classList.toggle('active', !isJa);
+    document.getElementById('btn-ja').classList.toggle('active', isJa);
+    document.getElementById('btn-en').classList.toggle('active', !isJa);
+
+    document.documentElement.lang = lang;
+    document.title = isJa
+      ? '使い方 - Mosaic Vault'
+      : 'How to Use - Mosaic Vault';
+  }
+</script>
+
+</body>
+</html>
