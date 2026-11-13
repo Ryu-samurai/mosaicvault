@@ -410,6 +410,8 @@
       ? 'プライバシーポリシー｜Mosaic Vault'
       : 'Privacy Policy｜Mosaic Vault';
   }
+  const browserLang = (navigator.language || '').toLowerCase();
+  setLang(browserLang.startsWith('ja') ? 'ja' : 'en');  
 </script>
 
 </body>
