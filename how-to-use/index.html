@@ -368,6 +368,8 @@ If creating or saving a mosaic image fails, the image format may not be supporte
       ? '使い方 - Mosaic Vault'
       : 'How to Use - Mosaic Vault';
   }
+  const browserLang = (navigator.language || '').toLowerCase();
+  setLang(browserLang.startsWith('ja') ? 'ja' : 'en');  
 </script>
 
 </body>
